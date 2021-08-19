@@ -19,7 +19,6 @@
  * along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *
  */
-#pragma once
 
 /**
  * Creality 4.2.x (STM32F103RET6) board pin assignments
@@ -59,12 +58,10 @@
 //
 // Servos
 //
-#ifndef SERVO0_PIN
-  #ifndef HAS_PIN_27_BOARD
-    #define SERVO0_PIN                      PB0   // BLTouch OUT
-  #else
-    #define SERVO0_PIN                      PC6
-  #endif
+#ifndef HAS_PIN_27_BOARD
+  #define SERVO0_PIN                        PB0   // BLTouch OUT
+#else
+  #define SERVO0_PIN                        PC6
 #endif
 
 //
@@ -74,9 +71,7 @@
 #define Y_STOP_PIN                          PA6
 #define Z_STOP_PIN                          PA7
 
-#ifndef Z_MIN_PROBE_PIN
-  #define Z_MIN_PROBE_PIN                   PB1   // BLTouch IN
-#endif
+#define Z_MIN_PROBE_PIN                     PB1   // BLTouch IN
 
 //
 // Filament Runout Sensor
